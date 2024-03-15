@@ -21,6 +21,7 @@ import { useTheme } from "next-themes";
 import { scrollToHash } from "@/lib/scrollhash";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Separator } from "../ui/separator";
+import Typewriter from 'typewriter-effect';
 
 export const HomeScreen = () => {
     const { setTheme, theme } = useTheme();
@@ -83,7 +84,13 @@ export const HomeScreen = () => {
 
                 <div className="flex flex-col w-full p-4 text-[#e7ffa6] justify-center items-center">
                     <p className="text-5xl font-semibold">Hi Folks</p>
-                    <p>Welcome to my portfolio page</p>
+                    <Typewriter
+                        options={{
+                            strings: ['Wassup?', 'Welcome to my portfolio page'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
                 </div>
 
                 <div className="flex w-full p-4 gap-x-2 text-[#e7ffa6] justify-center items-center">
