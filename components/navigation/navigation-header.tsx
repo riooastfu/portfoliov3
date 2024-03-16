@@ -1,3 +1,5 @@
+"use client"
+
 import { Blocks, BriefcaseBusiness, GraduationCap, Menu, Palette, User } from "lucide-react"
 import { Button } from "../ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
@@ -24,17 +26,13 @@ export const NavigationHeader = () => {
                     </div>
                     <Separator />
                     <div className="flex flex-col">
-                        <Button variant="ghost" className="justify-start p-2">
+                        <Button onClick={() => scrollToHash('profile')} variant="ghost" className="justify-start p-2">
                             <User className="mr-2 h-4 w-4" />
                             <span>Profile</span>
                         </Button>
-                        <Button variant="ghost" className="justify-start p-2">
-                            <GraduationCap className="mr-2 h-4 w-4" />
-                            <span>Education</span>
-                        </Button>
-                        <Button variant="ghost" className="justify-start p-2">
+                        <Button onClick={() => scrollToHash('resume')} variant="ghost" className="justify-start p-2">
                             <BriefcaseBusiness className="mr-2 h-4 w-4" />
-                            <span>Experience</span>
+                            <span>Resume</span>
                         </Button>
                         <Button variant="ghost" className="justify-start p-2">
                             <Blocks className="mr-2 h-4 w-4" />

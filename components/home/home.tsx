@@ -50,13 +50,9 @@ export const HomeScreen = () => {
                                     <User className="mr-2 h-4 w-4" />
                                     <span>Profile</span>
                                 </Button>
-                                <Button variant="ghost" className="justify-start p-2">
-                                    <GraduationCap className="mr-2 h-4 w-4" />
-                                    <span>Education</span>
-                                </Button>
-                                <Button variant="ghost" className="justify-start p-2">
+                                <Button onClick={() => scrollToHash('resume')} variant="ghost" className="justify-start p-2">
                                     <BriefcaseBusiness className="mr-2 h-4 w-4" />
-                                    <span>Experience</span>
+                                    <span>Resume</span>
                                 </Button>
                                 <Button variant="ghost" className="justify-start p-2">
                                     <Blocks className="mr-2 h-4 w-4" />
