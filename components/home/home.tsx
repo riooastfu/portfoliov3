@@ -54,11 +54,11 @@ export const HomeScreen = () => {
                                     <BriefcaseBusiness className="mr-2 h-4 w-4" />
                                     <span>Resume</span>
                                 </Button>
-                                <Button variant="ghost" className="justify-start p-2">
+                                <Button onClick={() => scrollToHash('skills')} variant="ghost" className="justify-start p-2">
                                     <Blocks className="mr-2 h-4 w-4" />
                                     <span>Skills</span>
                                 </Button>
-                                <Button variant="ghost" className="justify-start p-2">
+                                <Button onClick={() => scrollToHash('art')} variant="ghost" className="justify-start p-2">
                                     <Palette className="mr-2 h-4 w-4" />
                                     <span>Art</span>
                                 </Button>
