@@ -30,10 +30,10 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "language" &&
-                                    <TooltipProvider>
+                                    <TooltipProvider key={item.id}>
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <div key={item.id} className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
+                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
                                                     <Image src={item.ico} alt="ava" className="h-16" />
                                                 </div>
                                             </TooltipTrigger>
@@ -51,10 +51,10 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "framework" &&
-                                    <TooltipProvider>
+                                    <TooltipProvider key={item.id}>
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <div key={item.id} className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
+                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
                                                     <Image src={item.ico} alt="ava" className="h-16" />
                                                 </div>
                                             </TooltipTrigger>
@@ -72,10 +72,10 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "dbms" &&
-                                    <TooltipProvider>
+                                    <TooltipProvider key={item.id}>
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <div key={item.id} className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
+                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
                                                     <Image src={item.ico} alt="ava" className="h-16" />
                                                 </div>
                                             </TooltipTrigger>
@@ -93,10 +93,10 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "other" &&
-                                    <TooltipProvider>
+                                    <TooltipProvider key={item.id}>
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <div key={item.id} className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
+                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
                                                     <Image src={item.ico} alt="ava" className="h-16" />
                                                 </div>
                                             </TooltipTrigger>
