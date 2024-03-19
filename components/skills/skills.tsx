@@ -25,7 +25,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "language" &&
-                                    <Card item={item} />
+                                    <Card key={item.id} item={item} />
                                 ))
                             }
                         </div>
@@ -35,7 +35,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "framework" &&
-                                    <Card item={item} />
+                                    <Card key={item.id} item={item} />
                                 ))
                             }
                         </div>
@@ -45,7 +45,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "dbms" &&
-                                    <Card item={item} />
+                                    <Card key={item.id} item={item} />
                                 ))
                             }
                         </div>
@@ -55,7 +55,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "other" &&
-                                    <Card item={item} />
+                                    <Card key={item.id} item={item} />
                                 ))
                             }
                         </div>
