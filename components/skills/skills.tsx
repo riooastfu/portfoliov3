@@ -1,16 +1,11 @@
 import Image from "next/image";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
 
 import { NavigationHeader } from "../navigation/navigation-header"
 
 import { data } from "@/components/skills/data";
+import { Card } from "./card";
 
 export const SkillsScreen = () => {
     return (
@@ -30,18 +25,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "language" &&
-                                    <TooltipProvider key={item.id}>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
-                                                    <Image src={item.ico} alt="ava" className="h-16" />
-                                                </div>
-                                            </TooltipTrigger>
-                                            <TooltipContent side="bottom" align="end">
-                                                <p>{item.name}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
+                                    <Card item={item} />
                                 ))
                             }
                         </div>
@@ -51,18 +35,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "framework" &&
-                                    <TooltipProvider key={item.id}>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
-                                                    <Image src={item.ico} alt="ava" className="h-16" />
-                                                </div>
-                                            </TooltipTrigger>
-                                            <TooltipContent side="bottom" align="end">
-                                                <p>{item.name}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
+                                    <Card item={item} />
                                 ))
                             }
                         </div>
@@ -72,18 +45,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "dbms" &&
-                                    <TooltipProvider key={item.id}>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
-                                                    <Image src={item.ico} alt="ava" className="h-16" />
-                                                </div>
-                                            </TooltipTrigger>
-                                            <TooltipContent side="bottom" align="end">
-                                                <p>{item.name}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
+                                    <Card item={item} />
                                 ))
                             }
                         </div>
@@ -93,18 +55,7 @@ export const SkillsScreen = () => {
                             {
                                 data.map((item) => (
                                     item.type === "other" &&
-                                    <TooltipProvider key={item.id}>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 rounded-md hover:cursor-pointer">
-                                                    <Image src={item.ico} alt="ava" className="h-16" />
-                                                </div>
-                                            </TooltipTrigger>
-                                            <TooltipContent side="bottom" align="end">
-                                                <p>{item.name}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
+                                    <Card item={item} />
                                 ))
                             }
                         </div>
