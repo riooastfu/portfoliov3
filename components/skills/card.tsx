@@ -1,40 +1,85 @@
+"use client"
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { cn } from "@/lib/utils";
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import Image from "next/image";
+import { SkillType } from './data';
 
 interface CardProps {
-    item: {
-        id: number,
-        name: string,
-        type: string,
-        ico: string
-    }
+    item: SkillType;
 }
 
-export const Card = ({ item }: CardProps) => {
+export const Card: React.FC<CardProps> = ({ item }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
-        <TooltipProvider key={item.id}>
+        <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <div className="relative overflow-hidden group">
-                        <div className="flex flex-col h-36 p-2 items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-md hover:cursor-pointer group">
-                            <Image src={item.ico} alt="ava" className="h-16" />
-                            <div className="bg-lime-200 absolute left-0 top-0 h-full w-full transition rounded-md opacity-0 group-hover:opacity-80"></div>
+                    <motion.div
+                        className="relative h-36 w-full rounded-md bg-zinc-100 dark:bg-zinc-800 cursor-pointer overflow-hidden"
+                        initial={false}
+                        whileHover={{
+                            scale: 1.02,
+                            rotateX: 10,
+                            rotateY: 10,
+                            translateZ: 20
+                        }}
+                        transition={{ duration: 0.3 }}
+                        onHoverStart={() => setIsHovered(true)}
+                        onHoverEnd={() => setIsHovered(false)}
+                        style={{
+                            transformStyle: "preserve-3d",
+                            transform: "perspective(1000px)",
+                        }}
+                    >
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm" />
+
+                        {/* Content */}
+                        <div className="relative flex flex-col h-full w-full items-center justify-center p-4">
+                            <Image
+                                src={item.icon}
+                                alt={item.name}
+                                width={64}
+                                height={64}
+                                className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+                            />
+
+                            {/* Hover overlay */}
+                            <div className="bg-lime-200 absolute left-0 top-0 h-full w-full transition rounded-md opacity-0 group-hover:opacity-80" />
                         </div>
 
-                        <span className="text-zinc-100 bg-zinc-800 p-1 rounded-br-md rounded-bl-md absolute top-0 left-[1.5rem] inline-block translate-y-[-40px] duration-300 group-hover:translate-y-0 text-sm">{item.name}</span>
-                        {/* <h3 className="text-zinc-900 absolute top-4 left-6 translate-y-[30px] opacity-0 font-bold duration-300 group-hover:opacity-100">{item.name}</h3> */}
-                    </div>
+                        {/* Title label */}
+                        <span className="text-zinc-100 bg-zinc-800 p-1 rounded-br-md rounded-bl-md absolute top-0 left-[1.5rem] inline-block translate-y-[-40px] duration-300 group-hover:translate-y-0 text-sm">
+                            {item.name}
+                        </span>
+
+                        {/* 3D lighting effect */}
+                        <div
+                            className={cn(
+                                "absolute inset-0 rounded-md opacity-0 transition-opacity duration-300",
+                                "bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20",
+                                isHovered ? "opacity-100" : ""
+                            )}
+                        />
+                    </motion.div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" align="end">
-                    <p>{item.name}</p>
+                    <p className="font-medium">{item.name}</p>
+                    <p className="text-sm text-zinc-500">{item.experience}</p>
+                    {item.description && (
+                        <p className="text-xs text-zinc-400 mt-1">{item.description}</p>
+                    )}
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
-    )
-}
+    );
+};

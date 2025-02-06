@@ -1,6 +1,6 @@
 "use client"
 
-import { Blocks, BriefcaseBusiness, GraduationCap, Menu, Palette, User } from "lucide-react"
+import { Blocks, BriefcaseBusiness, FileCode2, GraduationCap, Menu, Palette, User } from "lucide-react"
 import { Button } from "../ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
@@ -37,6 +37,10 @@ export const NavigationHeader = () => {
                         <Button onClick={() => scrollToHash('skills')} variant="ghost" className="justify-start p-2">
                             <Blocks className="mr-2 h-4 w-4" />
                             <span>Skills</span>
+                        </Button>
+                        <Button onClick={() => scrollToHash('projects')} variant="ghost" className="justify-start p-2">
+                            <FileCode2 className="mr-2 h-4 w-4" />
+                            <span>Projects</span>
                         </Button>
                         <Button onClick={() => scrollToHash('art')} variant="ghost" className="justify-start p-2">
                             <Palette className="mr-2 h-4 w-4" />

@@ -16,7 +16,7 @@ import {
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Blocks, BriefcaseBusiness, Facebook, Github, GraduationCap, Instagram, Linkedin, LinkedinIcon, Menu, Moon, Palette, Sun, Twitter, User } from "lucide-react";
+import { Blocks, BriefcaseBusiness, Facebook, FileCode2, Github, GraduationCap, Instagram, Linkedin, LinkedinIcon, Menu, Moon, Palette, Sun, Twitter, User } from "lucide-react";
 import { useTheme } from "next-themes";
 import { scrollToHash } from "@/lib/scrollhash";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -57,6 +57,10 @@ export const HomeScreen = () => {
                                 <Button onClick={() => scrollToHash('skills')} variant="ghost" className="justify-start p-2">
                                     <Blocks className="mr-2 h-4 w-4" />
                                     <span>Skills</span>
+                                </Button>
+                                <Button onClick={() => scrollToHash('projects')} variant="ghost" className="justify-start p-2">
+                                    <FileCode2 className="mr-2 h-4 w-4" />
+                                    <span>Projects</span>
                                 </Button>
                                 <Button onClick={() => scrollToHash('art')} variant="ghost" className="justify-start p-2">
                                     <Palette className="mr-2 h-4 w-4" />
